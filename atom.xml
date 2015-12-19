@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learning every day.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://phillipchaffee.io/"/>
-  <updated>2015-12-19T21:02:31.353Z</updated>
+  <updated>2015-12-19T21:07:30.219Z</updated>
   <id>http://phillipchaffee.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://phillipchaffee.io/2015/12/20/R-probs/"/>
     <id>http://phillipchaffee.io/2015/12/20/R-probs/</id>
     <published>2015-12-20T01:51:19.000Z</published>
-    <updated>2015-12-19T21:02:31.353Z</updated>
+    <updated>2015-12-19T21:07:30.219Z</updated>
     <content type="html"><![CDATA[<p>I am current taking the class Practical Machine Learning on Coursera offered by John Hopkins University.</p>
 <p>The course project is to take sensor data from a study designed to evaluate the correctness in form of dumbbell exercises and build a machine learning algorithm that will predict how well dumbbell lift x was performed.<br>The individual lifts are categorized into five classes: A, B, C, D, E. A is a proper lift. The other four are common mistakes made in dumbbell lifting. The algorithm should predict the class of lift x. </p>
 <p>I have processed the training set, and built an algoritm based upon it. The problem arises when I attempt to predict the values of the testing set using <code>predict()</code>. Several of the columns in the testing set<br>contain purely NA values, and cause <code>predict()</code> to throw an error.</p>
@@ -32,6 +32,8 @@
     </summary>
     
       <category term="R, Coursera, Machine Learning" scheme="http://phillipchaffee.io/tags/R-Coursera-Machine-Learning/"/>
+    
+      <category term="Code, Data Science" scheme="http://phillipchaffee.io/categories/Code-Data-Science/"/>
     
   </entry>
   
