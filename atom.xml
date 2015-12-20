@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learning every day.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://phillipchaffee.io/"/>
-  <updated>2015-12-20T20:29:08.304Z</updated>
+  <updated>2015-12-20T20:33:39.348Z</updated>
   <id>http://phillipchaffee.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://phillipchaffee.io/2015/12/21/Coursera-Data-Science-12-20-15/"/>
     <id>http://phillipchaffee.io/2015/12/21/Coursera-Data-Science-12-20-15/</id>
     <published>2015-12-21T01:14:32.000Z</published>
-    <updated>2015-12-20T20:29:08.304Z</updated>
+    <updated>2015-12-20T20:33:39.348Z</updated>
     <content type="html"><![CDATA[<p>I have solved my previous problem of not being able to apply my random forest model to the testing set. </p>
 <p>I was originally cleaning the training set by removing all the un-needed data, e.g. row number, participant name, time frame. Then I was subsetting the data frame by using the caret package’s<br><code>nearZeroVar()</code>. It was removing most of the columns that were overly populated by NA, but not enough of them.</p>
 <p>I fixed the problem by removing all the columns with more than 100 NA values, leaving me with 52 variables to predict with. I built a random forest algorithm with this data using caret’s <code>train()</code> function.<br>The final model used 27 random predictors at each node, and had a .99585 in sample accuracy.</p>
@@ -40,8 +40,6 @@
     
       <category term="Data Science" scheme="http://phillipchaffee.io/categories/Data-Science/"/>
     
-      <category term="Code" scheme="http://phillipchaffee.io/categories/Data-Science/Code/"/>
-    
   </entry>
   
   <entry>
@@ -49,7 +47,7 @@
     <link href="http://phillipchaffee.io/2015/12/20/R-probs/"/>
     <id>http://phillipchaffee.io/2015/12/20/R-probs/</id>
     <published>2015-12-20T01:51:19.000Z</published>
-    <updated>2015-12-20T20:13:55.331Z</updated>
+    <updated>2015-12-20T20:33:58.111Z</updated>
     <content type="html"><![CDATA[<p>I am current taking the class Practical Machine Learning on Coursera offered by John Hopkins University.</p>
 <p>The course project is to take sensor data from a study designed to evaluate the correctness in form of dumbbell exercises and build a machine learning algorithm that will predict how well dumbbell lift x was performed.<br>The individual lifts are categorized into five classes: A, B, C, D, E. A is a proper lift. The other four are common mistakes made in dumbbell lifting. The algorithm should predict the class of lift x. </p>
 <p>I have processed the training set, and built an algoritm based upon it. The problem arises when I attempt to predict the values of the testing set using <code>predict()</code>. Several of the columns in the testing set<br>contain purely NA values, and cause <code>predict()</code> to throw an error.</p>
@@ -67,9 +65,7 @@
     
       <category term="R" scheme="http://phillipchaffee.io/tags/R/"/>
     
-      <category term="Code" scheme="http://phillipchaffee.io/categories/Code/"/>
-    
-      <category term="Data Science" scheme="http://phillipchaffee.io/categories/Code/Data-Science/"/>
+      <category term="Data Science" scheme="http://phillipchaffee.io/categories/Data-Science/"/>
     
   </entry>
   
