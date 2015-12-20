@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learning every day.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://phillipchaffee.io/"/>
-  <updated>2015-12-19T21:09:27.073Z</updated>
+  <updated>2015-12-20T20:29:08.304Z</updated>
   <id>http://phillipchaffee.io/</id>
   
   <author>
@@ -15,11 +15,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[R probs]]></title>
+    <title><![CDATA[Coursera Data Science 12/20/15]]></title>
+    <link href="http://phillipchaffee.io/2015/12/21/Coursera-Data-Science-12-20-15/"/>
+    <id>http://phillipchaffee.io/2015/12/21/Coursera-Data-Science-12-20-15/</id>
+    <published>2015-12-21T01:14:32.000Z</published>
+    <updated>2015-12-20T20:29:08.304Z</updated>
+    <content type="html"><![CDATA[<p>I have solved my previous problem of not being able to apply my random forest model to the testing set. </p>
+<p>I was originally cleaning the training set by removing all the un-needed data, e.g. row number, participant name, time frame. Then I was subsetting the data frame by using the caret package’s<br><code>nearZeroVar()</code>. It was removing most of the columns that were overly populated by NA, but not enough of them.</p>
+<p>I fixed the problem by removing all the columns with more than 100 NA values, leaving me with 52 variables to predict with. I built a random forest algorithm with this data using caret’s <code>train()</code> function.<br>The final model used 27 random predictors at each node, and had a .99585 in sample accuracy.</p>
+<p>I was afraid that I had over fitted the model and was tempted to scrap it, but I thought I would at least give it one try. I applied it to the testing set and got perfect accuracy. This was the first time I had<br>applied any model to the testing set, so my model was not at all tuned to the its noise. The testing set was only twenty rows in length, and I am sure had it been longer I would have gotten some wrong<br>predictions.</p>
+<p>I am very impressed with the random forests algorithm and plan to use it again.</p>
+<p>I am now attempting to understand the model. It is a very difficult task. You can pull single trees out of the model and analyze them, but there are so many trees it would impossible to go through them all.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I have solved my previous problem of not being able to apply my random forest model to the testing set. </p>
+<p>I was originally cleaning]]>
+    </summary>
+    
+      <category term="Code" scheme="http://phillipchaffee.io/tags/Code/"/>
+    
+      <category term="Data Science" scheme="http://phillipchaffee.io/tags/Data-Science/"/>
+    
+      <category term="Random Forests" scheme="http://phillipchaffee.io/tags/Random-Forests/"/>
+    
+      <category term="Data Science" scheme="http://phillipchaffee.io/categories/Data-Science/"/>
+    
+      <category term="Code" scheme="http://phillipchaffee.io/categories/Data-Science/Code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Coursera Data Science - 12/19/15]]></title>
     <link href="http://phillipchaffee.io/2015/12/20/R-probs/"/>
     <id>http://phillipchaffee.io/2015/12/20/R-probs/</id>
     <published>2015-12-20T01:51:19.000Z</published>
-    <updated>2015-12-19T21:09:27.073Z</updated>
+    <updated>2015-12-20T20:13:55.331Z</updated>
     <content type="html"><![CDATA[<p>I am current taking the class Practical Machine Learning on Coursera offered by John Hopkins University.</p>
 <p>The course project is to take sensor data from a study designed to evaluate the correctness in form of dumbbell exercises and build a machine learning algorithm that will predict how well dumbbell lift x was performed.<br>The individual lifts are categorized into five classes: A, B, C, D, E. A is a proper lift. The other four are common mistakes made in dumbbell lifting. The algorithm should predict the class of lift x. </p>
 <p>I have processed the training set, and built an algoritm based upon it. The problem arises when I attempt to predict the values of the testing set using <code>predict()</code>. Several of the columns in the testing set<br>contain purely NA values, and cause <code>predict()</code> to throw an error.</p>
