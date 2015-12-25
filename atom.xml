@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learning every day.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://phillipchaffee.io/"/>
-  <updated>2015-12-20T20:33:39.348Z</updated>
+  <updated>2015-12-25T14:06:56.796Z</updated>
   <id>http://phillipchaffee.io/</id>
   
   <author>
@@ -13,6 +13,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Coursera Practical Machine Learning Project Write Up]]></title>
+    <link href="http://phillipchaffee.io/2015/12/25/Coursera-Practical-Machine-Learning-Project-Write-Up/"/>
+    <id>http://phillipchaffee.io/2015/12/25/Coursera-Practical-Machine-Learning-Project-Write-Up/</id>
+    <published>2015-12-25T18:59:34.000Z</published>
+    <updated>2015-12-25T14:06:56.796Z</updated>
+    <content type="html"><![CDATA[<p>This is the write up for the final project of the Practical Machine Learning course taught by John Hopkins on Coursera.</p>
+<p>The project was to build a predictive model using sensor data from <a href="http://groupware.les.inf.puc-rio.br/har" target="_blank" rel="external">this</a> paper.</p>
+<hr>
+<p>title: “Practical Machine Learning Write-Up”<br>author: “Phillip Chaffee”<br>date: “December 20, 2015”</p>
+<h2 id="output_3A_html_document"><a href="#output_3A_html_document" class="headerlink" title="output: html_document"></a>output: html_document</h2><p>#Abstract</p>
+<p>This project involves a set of sensor data that pertain to a dumbbell lift. Each instance has sensor readings, and a classe. The classe is a rating of lifting form. A is a proper lift. B though E are common mistakes. The goal is to build an algorithm that will predict a lift’s classe given sensor data. This project subsetted the data to only the quality variables, and then built a random forest.</p>
+<p>#Analysis</p>
+<p>Analysis of the training data set showed that there were several instances of non values, characterized by NA, “”, “ “, and #DIV/0!. Therefore the first option performed was to read the data set in correctly.</p>
+<figure class="highlight"><figcaption><span>Load libraries and read data, cache=TRUE&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(caret)&#10;download.file(&#34;https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv&#34;, destfile = &#34;pml-training.csv&#34;)&#10;training &#60;- read.csv(&#34;pml-training.csv&#34;, na.strings = c(&#34;NA&#34;,&#34;&#34;,&#34; &#34;,&#34;#DIV/0!&#34;))</span><br></pre></td></tr></table></figure>
+<p>The next step was to get an idea of the variables in the training set.</p>
+<figure class="highlight"><figcaption><span>Analysis 1, cache=TRUE&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">colnames(training)</span><br></pre></td></tr></table></figure>
+<p>It seemed that the first seven variables had more to do with labeling the data than describing the lifts, so they were removed. To clean the data set, the columns with more than 100 NA values were also removed.</p>
+<figure class="highlight"><figcaption><span>Analysis 2/Clean, cache=TRUE&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">training &#60;- training[,-c(1,2,3,4,5,6,7)]&#10;goodData &#60;- colSums(is.na(training)) &#60; 100&#10;training &#60;- training[,goodData]</span><br></pre></td></tr></table></figure>
+<p>That provides 52 high quality variables to work with, excluding the classe column. This is a great set to build a model on.</p>
+<p>#Methods</p>
+<p>To build the model the caret package was used. A random forest was built, using boot632 resampling.</p>
+<figure class="highlight"><figcaption><span>Model training, cache=TRUE&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modFit &#60;- train(classe~., data=training, trControl=trainControl(method=&#34;boot632&#34;))</span><br></pre></td></tr></table></figure>
+<p>#Results</p>
+<p>This model provides very high in sample accuracy as well as out of sample accuracy.</p>
+<figure class="highlight"><figcaption><span>In sample summary, cache=TRUE&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">modFit$finalModel&#10;modFit$results</span><br></pre></td></tr></table></figure>
+<p>This model correctly predicted 20/20 of the training set classes.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This is the write up for the final project of the Practical Machine Learning course taught by John Hopkins on Coursera.</p>
+<p>The projec]]>
+    </summary>
+    
+      <category term="Coursera" scheme="http://phillipchaffee.io/tags/Coursera/"/>
+    
+      <category term="Data Science" scheme="http://phillipchaffee.io/tags/Data-Science/"/>
+    
+      <category term="John Hopkins" scheme="http://phillipchaffee.io/tags/John-Hopkins/"/>
+    
+      <category term="Machine Learning" scheme="http://phillipchaffee.io/tags/Machine-Learning/"/>
+    
+      <category term="Data Science" scheme="http://phillipchaffee.io/categories/Data-Science/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Coursera Data Science 12/20/15]]></title>
