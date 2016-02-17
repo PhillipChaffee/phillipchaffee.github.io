@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learning every day.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://phillipchaffee.io/"/>
-  <updated>2015-12-25T14:06:56.796Z</updated>
+  <updated>2016-02-17T19:18:05.167Z</updated>
   <id>http://phillipchaffee.io/</id>
   
   <author>
@@ -13,6 +13,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Understanding Git Rebase]]></title>
+    <link href="http://phillipchaffee.io/2016/02/17/Understanding-Git-Rebase/"/>
+    <id>http://phillipchaffee.io/2016/02/17/Understanding-Git-Rebase/</id>
+    <published>2016-02-17T19:56:09.000Z</published>
+    <updated>2016-02-17T19:18:05.167Z</updated>
+    <content type="html"><![CDATA[<p>I recently completed my first complicated rebase. I did not understand what a rebase was, but was aware that it was proper work flow to rebase your feature before merge with master.</p>
+<p>I read the git documentation and multiple tutorials, but I still did not understand what was going on when I had to make a choice involving a file that was modified by both my feature and master.</p>
+<p>This post will give an overview of what a rebase is and attempt to explain what is happening during the process.</p>
+<p>##Rebase Overview</p>
+<p>A rebase is a simple concept. Imagine a real tree branch. A branch splits off from the main branch half way down. If we were to rebase the branch in the middle onto the main tree branch, we would chop it off the middle, and re-attach it to the very tip of the main branch.</p>
+<p>A rebase takes all the changes you have made, and attaches them to the end of the master branch, changing the place your branch diverges from the master branch.</p>
+<p>##Confusing Rebase Conflicts</p>
+<p>So what happens when you changed a file in your feature, and someone else also changed that file and committed it to master. The rebasing process will ask you which changes you want to take, but the way in which it does offers no explanation of which files are which.</p>
+<p>When two files are in conflict, it will stop the process and ask you to fix the conflicts before it proceeds. A run of <code>git status</code> will show the unconflicted files in green, ready to be committed, and the conflicting files in red, needing to be added to the commit, modified, or swapped out for the master branches version.</p>
+<p>This is how I understand the next part of the process:</p>
+<ul>
+<li>Adding the files in red to the commit tells git to take your version of the files.</li>
+<li>Using <code>git checkout master file-in-question</code> on the un-added file will tell git to use the master branches file version.</li>
+</ul>
+<p>I hope this is educational. If I am wrong about any of this please let me know. You can write me at phillipdensmorechaffee@gmail.com.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I recently completed my first complicated rebase. I did not understand what a rebase was, but was aware that it was proper work flow to r]]>
+    </summary>
+    
+      <category term="-Git -Rebase -Merge" scheme="http://phillipchaffee.io/tags/Git-Rebase-Merge/"/>
+    
+      <category term="-Git" scheme="http://phillipchaffee.io/categories/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[February 8th, 2016 4:30AM]]></title>
+    <link href="http://phillipchaffee.io/2016/02/08/February-8th-2016-4-30AM/"/>
+    <id>http://phillipchaffee.io/2016/02/08/February-8th-2016-4-30AM/</id>
+    <published>2016-02-08T14:29:20.000Z</published>
+    <updated>2016-02-17T19:18:05.167Z</updated>
+    <content type="html"><![CDATA[<p>A wind blows to the west<br>And carries with it a seed<br>Where it will go<br>No one may know<br>But go on it will indeed</p>
+<p>Sometimes it thinks it controls the wind<br>With a mighty sail it makes its own course<br>Others it resigns<br>To be blown without mind<br>Wherever the wind may force</p>
+<p>What it can’t figure out is whether it matters<br>If one tries to control or flows on<br>It seems that control<br>Is nothing at all<br>But the musings of a pawn</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>A wind blows to the west<br>And carries with it a seed<br>Where it will go<br>No one may know<br>But go on it will indeed</p>
+<p>Sometime]]>
+    </summary>
+    
+      <category term="Morning thoughts" scheme="http://phillipchaffee.io/tags/Morning-thoughts/"/>
+    
+      <category term="Poetry" scheme="http://phillipchaffee.io/categories/Poetry/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Coursera Practical Machine Learning Project Write Up]]></title>
@@ -111,20 +164,6 @@
       <category term="R" scheme="http://phillipchaffee.io/tags/R/"/>
     
       <category term="Data Science" scheme="http://phillipchaffee.io/categories/Data-Science/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://phillipchaffee.io/2015/12/19/hello-world/"/>
-    <id>http://phillipchaffee.io/2015/12/19/hello-world/</id>
-    <published>2015-12-19T21:04:29.319Z</published>
-    <updated>2015-12-19T21:04:29.319Z</updated>
-    <content type="html"><![CDATA[<p>Hello all. I like this streamlined hexo blog written in node.js much better than my previous set up. Just wanted something simple and easy that I could blog on, and here I am!</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hello all. I like this streamlined hexo blog written in node.js much better than my previous set up. Just wanted something simple and eas]]>
-    </summary>
     
   </entry>
   
