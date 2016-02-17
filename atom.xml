@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Learning every day.]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://phillipchaffee.io/"/>
-  <updated>2016-02-17T19:18:05.167Z</updated>
+  <updated>2016-02-17T21:26:50.637Z</updated>
   <id>http://phillipchaffee.io/</id>
   
   <author>
@@ -19,15 +19,13 @@
     <link href="http://phillipchaffee.io/2016/02/17/Understanding-Git-Rebase/"/>
     <id>http://phillipchaffee.io/2016/02/17/Understanding-Git-Rebase/</id>
     <published>2016-02-17T19:56:09.000Z</published>
-    <updated>2016-02-17T19:18:05.167Z</updated>
+    <updated>2016-02-17T21:26:50.637Z</updated>
     <content type="html"><![CDATA[<p>I recently completed my first complicated rebase. I did not understand what a rebase was, but was aware that it was proper work flow to rebase your feature before merge with master.</p>
 <p>I read the git documentation and multiple tutorials, but I still did not understand what was going on when I had to make a choice involving a file that was modified by both my feature and master.</p>
 <p>This post will give an overview of what a rebase is and attempt to explain what is happening during the process.</p>
-<p>##Rebase Overview</p>
-<p>A rebase is a simple concept. Imagine a real tree branch. A branch splits off from the main branch half way down. If we were to rebase the branch in the middle onto the main tree branch, we would chop it off the middle, and re-attach it to the very tip of the main branch.</p>
+<h2 id="Rebase_Overview"><a href="#Rebase_Overview" class="headerlink" title="Rebase Overview"></a>Rebase Overview</h2><p>A rebase is a simple concept. Imagine a real tree branch. A branch splits off from the main branch half way down. If we were to rebase the branch in the middle onto the main tree branch, we would chop it off the middle, and re-attach it to the very tip of the main branch.</p>
 <p>A rebase takes all the changes you have made, and attaches them to the end of the master branch, changing the place your branch diverges from the master branch.</p>
-<p>##Confusing Rebase Conflicts</p>
-<p>So what happens when you changed a file in your feature, and someone else also changed that file and committed it to master. The rebasing process will ask you which changes you want to take, but the way in which it does offers no explanation of which files are which.</p>
+<h2 id="Confusing_Rebase_Conflicts"><a href="#Confusing_Rebase_Conflicts" class="headerlink" title="Confusing Rebase Conflicts"></a>Confusing Rebase Conflicts</h2><p>So what happens when you changed a file in your feature, and someone else also changed that file and committed it to master. The rebasing process will ask you which changes you want to take, but the way in which it does offers no explanation of which files are which.</p>
 <p>When two files are in conflict, it will stop the process and ask you to fix the conflicts before it proceeds. A run of <code>git status</code> will show the unconflicted files in green, ready to be committed, and the conflicting files in red, needing to be added to the commit, modified, or swapped out for the master branches version.</p>
 <p>This is how I understand the next part of the process:</p>
 <ul>
@@ -40,9 +38,13 @@
     <![CDATA[<p>I recently completed my first complicated rebase. I did not understand what a rebase was, but was aware that it was proper work flow to r]]>
     </summary>
     
-      <category term="-Git -Rebase -Merge" scheme="http://phillipchaffee.io/tags/Git-Rebase-Merge/"/>
+      <category term="Git" scheme="http://phillipchaffee.io/tags/Git/"/>
     
-      <category term="-Git" scheme="http://phillipchaffee.io/categories/Git/"/>
+      <category term="Merge" scheme="http://phillipchaffee.io/tags/Merge/"/>
+    
+      <category term="Rebase" scheme="http://phillipchaffee.io/tags/Rebase/"/>
+    
+      <category term="Git" scheme="http://phillipchaffee.io/categories/Git/"/>
     
   </entry>
   
