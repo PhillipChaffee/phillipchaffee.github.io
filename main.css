@@ -1,0 +1,30 @@
+html, body, h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: 'Slabo 27px', sans-serif;
+  background-color: #ffffef;
+}
+
+content {
+  padding: 1%;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: black;
+  padding: 1%;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
