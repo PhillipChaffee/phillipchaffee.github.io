@@ -4,7 +4,7 @@ layout: default
 <main class="content text-center" role="main">
     <article class="post single-post" itemscope itemtype="http://schema.org/BlogPosting">
 
-        <header class="post-header short-diver">
+        <header class="post-header short-diver row">
             <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
             <section class="post-meta">
                 <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
@@ -15,8 +15,10 @@ layout: default
             </section>
         </header>
 
-        <section class="post-content short-diver" itemprop="articleBody">
-            {{content}}
+        <section class="post-content short-diver row" itemprop="articleBody">
+            <div class=" col-md-6 col-md-offset-3 text-left">
+                {{content}}
+            </div>
         </section>
 
         <footer class="post-footer">
