@@ -2,7 +2,13 @@
 layout: default
 ---
 
-<div id="content" class="content text-center">
+<div id="content" class="content text-center container">
+    <div class="row text-center">
+        <h2>Categories</h2>
+        {% for category in site.categories %}
+        <a href="/blog/{{category | first}}">{{category | first }}</a>
+        {% endfor %}
+    </div>
     <h2>Posts</h2>
     {% for post in site.posts %}
     {% unless post.draft %}
