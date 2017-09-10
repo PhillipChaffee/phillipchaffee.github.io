@@ -10,9 +10,9 @@ permalink:    /blog/:categories/:title
 
 # Harmony theme configuration. Please change accordingly.
 harmony:
-  name: Harmony
+  name: Pursuit of Truth
   # Little description about your site
-  description: Harmony is free responsive jekyll theme.
+  description: In search of truth despite its ramifications.
   # 'meta_description:' Write an awesome description for your new site here.
   # It will appear in your document head meta (for Google search results) and 
   # in your feed.xml site description.
@@ -35,7 +35,7 @@ harmony:
     twitter: phillipchaffee
     facebook: phillipchaffee
   # Toggle disclaimer in footer
-  show_disclaimer: true
+  show_disclaimer: false
 
 
 # Markdown Processor
