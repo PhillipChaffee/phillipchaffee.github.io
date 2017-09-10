@@ -1,20 +1,39 @@
 ---
 layout: default
 ---
+<div id="home" class="page-content wc-container">
+	<div class="posts">
+  		{% for post in site.posts limit:10 %}
+  			<div class="post">
+    			<h3 class="post-title">
+			      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
+			        {{ post.title }}
+			      </a>
+    			</h3>
 
-<div id="content" class="content text-center container">
-    <div class="row text-center">
-        <h2>Categories</h2>
-        {% for category in site.categories %}
-        <a href="/blog/{{category | first}}">{{category | first }}</a>
-        {% endfor %}
-    </div>
-    <h2>Posts</h2>
-    {% for post in site.posts %}
-    {% unless post.draft %}
-
-    <a href="{{ post.url }}">{{ post.title }}</a>
-
-    {% endunless %}
-    {% endfor %}
+          <p class="post-meta">
+            {% if post.categories.size > 0 %}
+            <span class="categories">
+            {{ post.categories | array_to_sentence_string }}
+            </span> |
+            {% endif %}
+            <span class="post-date">
+            {{ post.date | date: "%b %-d, %Y" }} 
+            </span>
+          </p>          
+    			    			
+  				<p>
+	  				{{ post.excerpt }}	
+  				</p>
+  				<p>
+  					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
+  						Read More
+					</a>
+  				</p>
+  			</div>
+  		{% endfor %}
+	</div>
+	<div class="post-footer">
+		<div class="column-full"><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog archive</a></div>
+	</div>
 </div>

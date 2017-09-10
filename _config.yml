@@ -1,12 +1,49 @@
 # Site settings
-title:        "things"
-description:  I have never known what to call my blog. It has things in it though, so I went with that.
-keywords:     Phillip Chaffee Blog Programming Technology Thoughts Ideas
+title:        Pursuit of Truth
+description:  In search of truth despite its ramifications.
+keywords:     Phillip Chaffee Blog Programming Technology Thoughts Ideas Truth Questions Economics Finance
 language:     "en" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
 
 baseurl:      "/" # the subpath of your site, e.g. /blog
 url:          "http://phillipchaffee.io" # the base hostname & protocol for your site. Have a look at robots.txt as well!
 permalink:    /blog/:categories/:title
 
+# Harmony theme configuration. Please change accordingly.
+harmony:
+  name: Harmony
+  # Little description about your site
+  description: Harmony is free responsive jekyll theme.
+  # 'meta_description:' Write an awesome description for your new site here.
+  # It will appear in your document head meta (for Google search results) and 
+  # in your feed.xml site description.
+  meta_description: > # 
+   Harmony is a free responsive jekyll theme by Gayan Virajith
+   and Maheshika Lakmali. Sourced on Github - 
+   https://github.com/gayanvirajith/harmony
+  basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
+  author: # Author details
+    name: Phillip Chaffee
+    email: phillipchaffee@gmail.com
+    url: http://phillipchaffee.github.io
+
+  # Google Analytics key, leave blank to ignore
+  google_analytics_key: UA-xxxx-x
+
+  # Profile links, leave blank to ignore
+  social: 
+    github: phillipchaffee
+    twitter: phillipchaffee
+    facebook: phillipchaffee
+  # Toggle disclaimer in footer
+  show_disclaimer: true
+
+
 # Markdown Processor
 markdown:     kramdown
+# This is how you put pygments config in jekyll 2.0 instead of pygments: true
+highlighter: pygments 
+
+# Sass conversion configs
+sass:
+    sass_dir: /blog/assets/css/_sass
+    style: :compressed
