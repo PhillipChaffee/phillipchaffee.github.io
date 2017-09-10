@@ -5,7 +5,7 @@ keywords:     Phillip Chaffee Blog Programming Technology Thoughts Ideas Truth Q
 language:     "en" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
 
 baseurl:      "/" # the subpath of your site, e.g. /blog
-url:          "http://phillipchaffee.io" # the base hostname & protocol for your site. Have a look at robots.txt as well!
+url:          "http://phillipchaffee.github.io" # the base hostname & protocol for your site. Have a look at robots.txt as well!
 permalink:    /blog/:categories/:title
 
 # Harmony theme configuration. Please change accordingly.
