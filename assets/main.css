@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Abel, sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100vh;
+}
+
+main {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #2A2F36;
+    font-weight: 600;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -ms-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+section{
+}
+
+::selection {
+    background: #ee983d;
+    color: #fff;
+}
+
+.intro {
+    font-size: 3em;
+}
+
+.intro-image {
+    max-width: 40%;
+    height: auto;
+}
+
+.post-title {
+    padding: 1em 0 0 0;
+    font-size: 2em;
+}

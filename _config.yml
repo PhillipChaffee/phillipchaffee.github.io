@@ -1,49 +1,40 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
 # Site settings
-title:        Pursuit of Truth
-description:  In search of truth despite its ramifications.
-keywords:     Phillip Chaffee Blog Programming Technology Thoughts Ideas Truth Questions Economics Finance
-language:     "en" # default language of the blog. Language codes: http://www.w3schools.com/tags/ref_language_codes.asp
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Phillip Chaffee
+email: Good Luck
+author: Phillip Chaffee
+description: The homepage of Phillip Chaffee
+profile: ../assets/profile.png
+url: "http://phillipchaffee.io"
+twitter_username: PhillipChaffee
+github_username:  PhillipChaffee
+excerpt_separator: <!--more-->
 
-baseurl:      "/" # the subpath of your site, e.g. /blog
-url:          "http://phillipchaffee.github.io" # the base hostname & protocol for your site. Have a look at robots.txt as well!
-permalink:    /blog/:categories/:title
+# Build settings
+markdown: kramdown
+plugins:
 
-# Harmony theme configuration. Please change accordingly.
-harmony:
-  name: Pursuit of Truth
-  # Little description about your site
-  description: In search of truth despite its ramifications.
-  # 'meta_description:' Write an awesome description for your new site here.
-  # It will appear in your document head meta (for Google search results) and 
-  # in your feed.xml site description.
-  meta_description: > # 
-   Harmony is a free responsive jekyll theme by Gayan Virajith
-   and Maheshika Lakmali. Sourced on Github - 
-   https://github.com/gayanvirajith/harmony
-  basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
-  author: # Author details
-    name: Phillip Chaffee
-    email: phillipchaffee@gmail.com
-    url: http://phillipchaffee.github.io
-
-  # Google Analytics key, leave blank to ignore
-  google_analytics_key: UA-xxxx-x
-
-  # Profile links, leave blank to ignore
-  social: 
-    github: phillipchaffee
-    twitter: phillipchaffee
-    facebook: phillipchaffee
-  # Toggle disclaimer in footer
-  show_disclaimer: false
-
-
-# Markdown Processor
-markdown:     kramdown
-# This is how you put pygments config in jekyll 2.0 instead of pygments: true
-highlighter: pygments 
-
-# Sass conversion configs
-sass:
-    sass_dir: /blog/assets/css/_sass
-    style: :compressed
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

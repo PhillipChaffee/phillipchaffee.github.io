@@ -1,0 +1,9 @@
+<section>
+    {% for post in site.posts %}
+    {% if post.title != 404 %}
+    <p class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></p>
+    <p>{% if post.excerpt %} {{ post.excerpt }}{% endif %}</p>
+    {% if post.image %}<p><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></p>{% endif %}
+    {% endif %}
+    {% endfor %}
+</section>
