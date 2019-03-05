@@ -20,9 +20,15 @@
         <p>{{ page.tagline }}</p>
         {{ content }}
         <span>
-            <i class="fab fa-twitter-square fa-lg"></i>
-            <i class="fab fa-github-square fa-lg"></i>
-            <i class="fab fa-linkedin fa-lg"></i>
+            <a href="https://twitter.com/{{ site.twitter_username }}">
+                <i class="fab fa-twitter-square fa-lg"></i>
+            </a>
+            <a href="https://github.com/{{ site.github_username }}">
+                <i class="fab fa-github-square fa-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>
         </span>
     </header>
     <main>
