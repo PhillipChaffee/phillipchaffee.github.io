@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "The Current State Of Mankind"
 date:   2019-03-01 20:44:05 -0500
 categories: jekyll update
 ---

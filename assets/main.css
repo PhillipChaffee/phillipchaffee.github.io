@@ -79,7 +79,28 @@ section{
     height: auto;
 }
 
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 40%;
+}
+
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.blog-title {
+    border-bottom: 2px solid black;
+}
+
 .post-title {
-    padding: 1em 0 0 0;
     font-size: 2em;
+    margin-bottom: 0;
 }

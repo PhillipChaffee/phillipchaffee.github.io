@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<main class='blog'>
+    <section class="blog-header">
+        <h1 class="blog-title">It's a mess up here</h1>
+        {% include social.html %}
+    </section>
+    <section class="posts">
+        {% for post in site.posts %}
+        {% if post.title != 404 %}
+        <p class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></p>
+        {% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
+        {% if post.image %}<p><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></p>{% endif %}
+        {% endif %}
+        <hr>
+        {% endfor %}
+    </section>
+</main>
