@@ -2,11 +2,8 @@
 layout: default
 ---
 
-<main class='blog'>
-    <section class="blog-header">
-        <h1 class="blog-title">It's a mess up here</h1>
-        {% include social.html %}
-    </section>
+<main>
+    {% include blog-header.html %}
     <section class="posts">
         {% for post in site.posts %}
         {% if post.title != 404 %}

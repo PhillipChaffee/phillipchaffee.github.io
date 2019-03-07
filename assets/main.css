@@ -44,10 +44,11 @@ header h3 {
 }
 
 main {
-    width: 60%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    justify-items: center;
     align-items: center;
 }
 
@@ -62,9 +63,6 @@ a {
     transition: all .15s ease-in-out;
 }
 
-section{
-}
-
 ::selection {
     background: #ee983d;
     color: #fff;
@@ -77,15 +75,6 @@ section{
 .intro-image {
     max-width: 40%;
     height: auto;
-}
-
-.blog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    width: 40%;
 }
 
 .blog-header {
@@ -103,4 +92,8 @@ section{
 .post-title {
     font-size: 2em;
     margin-bottom: 0;
+}
+
+.title {
+    border-bottom: 1px solid #d3d3d3;
 }
