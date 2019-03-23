@@ -2,8 +2,10 @@
 layout: default
 ---
 
-<main>
+<main class="post-page">
     {% include blog-header.html %}
-    <h1>{{ page.title }}</h1>
-    {{ content }}
+    <section class="post">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+    </section>
 </main>
