@@ -56,18 +56,14 @@ a {
     font-weight: 600;
 }
 
-::selection {
-    background: #ee983d;
-    color: #fff;
-}
-
 .intro {
     font-size: 3em;
+    margin-bottom: 1%;
 }
 
 .intro-image {
-    max-width: 40%;
-    height: auto;
+    height: 40%;
+    width: auto;
 }
 
 .blog {
