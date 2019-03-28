@@ -6,6 +6,7 @@ body {
     align-items: center;
     font-family: Abel, sans-serif;
     margin: 0 0 0 0;
+    height: 100vh;
 }
 
 header {
