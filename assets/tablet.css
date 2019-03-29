@@ -1,0 +1,102 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Abel, sans-serif;
+    margin: 0 0 0 0;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 30%;
+    height: 100vh;
+    font-size: 1em;
+}
+
+header p {
+    margin-top: 1%;
+    text-align: center;
+}
+
+header h2 {
+    margin-bottom: 0%;
+}
+
+header h3 {
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+
+.spacer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+main {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #2A2F36;
+    font-weight: 600;
+}
+
+.intro {
+    font-size: 3em;
+    margin-bottom: 1%;
+}
+
+.intro-image {
+    height: 40%;
+    width: auto;
+}
+
+.blog {
+    justify-content: start;
+}
+
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.blog-title {
+    border-bottom: 2px solid black;
+}
+
+.post-page {
+    justify-content: start;
+}
+
+.post {
+    align-items: start;
+    justify-content: start;
+}
+
+.post-title {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.title {
+    border-bottom: 1px solid #d3d3d3;
+}

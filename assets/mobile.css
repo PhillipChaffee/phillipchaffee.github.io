@@ -1,3 +1,4 @@
+
 body {
     display: flex;
     flex-direction: column;
@@ -15,6 +16,7 @@ header {
     justify-content: center;
     justify-items: center;
     align-items: center;
+    padding-top: 5%;
     width: 90%;
     font-size: 1em;
 }
@@ -40,7 +42,7 @@ main {
     justify-content: center;
     justify-items: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 a {
