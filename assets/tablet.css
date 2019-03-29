@@ -5,7 +5,7 @@ body {
     align-items: center;
     font-family: Abel, sans-serif;
     margin: 0 0 0 0;
-    height: 100vh;
+    height: 100%;
 }
 
 header {
@@ -14,8 +14,8 @@ header {
     justify-content: center;
     justify-items: center;
     align-items: center;
-    width: 30%;
     height: 100vh;
+    width: 90%;
     font-size: 1em;
 }
 
@@ -41,13 +41,13 @@ header h3 {
 }
 
 main {
-    width: 40%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     justify-items: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
 }
 
 a {
@@ -62,8 +62,8 @@ a {
 }
 
 .intro-image {
-    height: 40%;
-    width: auto;
+    height: auto;
+    width: 251px;
 }
 
 .blog {
