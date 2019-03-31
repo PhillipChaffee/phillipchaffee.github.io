@@ -14,9 +14,11 @@ header {
     justify-content: center;
     justify-items: center;
     align-items: center;
-    width: 576px;
-    height: 100vh;
-    font-size: 1em;
+    margin: 10vh 0 10vh 0;
+    width: 60vw;
+    height: 100%;
+    min-height: 100vh;
+    font-size: 1vw;
 }
 
 header p {
@@ -57,13 +59,13 @@ a {
 }
 
 .intro {
-    font-size: 3em;
+    font-size: 3vw;
     margin-bottom: 1%;
 }
 
 .intro-image {
-    height: auto;
-    width: 251px;
+    height: 40vh;
+    width: auto;
 }
 
 .blog {
@@ -93,7 +95,7 @@ a {
 }
 
 .post-title {
-    font-size: 2em;
+    font-size: 2vw;
     margin-bottom: 0;
 }
 

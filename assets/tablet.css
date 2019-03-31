@@ -16,7 +16,7 @@ header {
     align-items: center;
     height: 100vh;
     width: 90%;
-    font-size: 1em;
+    font-size: 1vw;
 }
 
 header p {
@@ -62,8 +62,8 @@ a {
 }
 
 .intro-image {
-    height: auto;
-    width: 251px;
+    height: 40vh;
+    width: auto;
 }
 
 .blog {
