@@ -43,7 +43,7 @@ header h3 {
 }
 
 main {
-    width: 800px;
+    width: 60vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
