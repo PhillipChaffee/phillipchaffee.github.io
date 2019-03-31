@@ -23,6 +23,7 @@ header {
 
 header p {
     margin-top: 1%;
+    margin-bottom: 1%;
     text-align: center;
 }
 
@@ -50,6 +51,7 @@ main {
     justify-items: center;
     align-items: center;
     height: 100vh;
+    font-size: 1vw;
 }
 
 a {
@@ -100,5 +102,6 @@ a {
 }
 
 .title {
+    font-size: 2vw;
     border-bottom: 1px solid #d3d3d3;
 }

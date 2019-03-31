@@ -10,7 +10,7 @@ In my time here I want to be able to say I helped/brought people together and ne
 If you want to know what I am thinking about, check out my <a href="/blog">blog</a>.
 
 ## Current Goal
-Build twelve startups in twelve months. You can read about it <a href="http://link">here</a>.
+Build twelve startups in twelve months. You can read about it <a href="/12startups12months/2019/03/31/just-do-something.html">here</a>.
 
 ### Working On
 Getting everything setup for starting in April.
