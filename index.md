@@ -13,4 +13,4 @@ If you want to know what I am thinking about, check out my <a href="/blog">blog<
 Build twelve startups in twelve months. You can read about it <a href="/12startups12months/2019/03/31/just-do-something.html">here</a>.
 
 ### Working On
-Getting everything setup for starting in April.
+Rock climbing app to share/rate climbs. Name pending!
