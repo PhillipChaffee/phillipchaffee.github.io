@@ -2,10 +2,22 @@
 layout: default
 ---
 
-<main class="post-page">
-    {% include blog-header.html %}
-    <section class="post">
-        <h1 class="title">{{ page.title }}</h1>
-        {{ content }}
-    </section>
+<header class="section">
+    <div class="container">
+        {% include blog-header.html %}
+    </div>
+</header>
+
+<main class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-12-mobile is-10-tablet is-6-desktop">
+                <section class="content">
+                    <h1 class="title">{{ page.title }}</h1>
+                    <hr />
+                    {{ content }}
+                </section>
+            </div>
+        </div>
+    </div>
 </main>
