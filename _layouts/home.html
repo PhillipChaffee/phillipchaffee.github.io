@@ -2,10 +2,22 @@
 layout: default
 ---
 
-<header>
-    <img class="intro-image" src="{{ site.profile }}"></img>
-    <p class="intro">{{ page.intro }}</p>
-    <p>{{ page.tagline }}</p>
-    {{ content }}
-    {% include social.html %}
+<header class="section">
+    <div class="container">
+        <div class="columns is-hidden-mobile">
+            <div class="column is-2 is-offset-5">
+                <figure class="image is-2by3">
+                    <img src="{{ site.profile }}">
+                </figure>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-6 is-offset-3 has-text-centered">
+                <p class="title is-2">{{ page.intro }}</p>
+                <p class="subtitle is-6">{{ page.tagline }}</p>
+                <p class="content">{{ content }}</p>
+                {% include social.html %}
+            </div>
+        </div>
+    </div>
 </header>
