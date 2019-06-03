@@ -10,13 +10,19 @@ layout: default
 
 <main class="section">
     <section class="container">
-        {% for post in site.posts %}
-        {% if post.title != 404 %}
-        <p class="title is-4"><a class="has-text-black" href="{{ post.url }}">{{ post.title }}</a></p>
-        {% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
-        {% if post.image %}<p><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></p>{% endif %}
-        {% endif %}
-        <hr>
-        {% endfor %}
+        <div class="columns is-desktop is-centered">
+            <div class="column is-6">
+                {% for post in site.posts %}
+                {% if post.title != 404 %}
+                <a class="has-text-black" href="{{ post.url }}">
+                    <p class="title is-4 has-text-centered">{{ post.title }}</p>
+                    {% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
+                    {% if post.image %}<p><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></p>{% endif %}
+                    {% endif %}
+                </a>
+                <hr>
+                {% endfor %}
+            </div>
+        </div>
     </section>
 </main>
