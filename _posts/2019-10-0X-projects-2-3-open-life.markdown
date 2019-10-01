@@ -9,6 +9,7 @@ published: false
 # 12 Startups Update/Thoughts
 
 - The purpose of 12 projects in 12 months is to find something you want to work on
+  - To start if you don't know where to start
   - I'm not sure it's beneficial to finish it.
   - If you find something to work on and it doesn't generate revenue, maybe it's back to 12 projects to find another idea.
 
@@ -22,3 +23,9 @@ published: false
   - MVP is goal setting/tracking profile
   - The rough draft is done/ current state
   - Possible future ideas
+
+- So what's next?
+  - Talk to users about why they signed up
+  - Iterate on Open Life
+  - I want to write more
+  - I will be tracking my goals in Open Life? Maybe?
