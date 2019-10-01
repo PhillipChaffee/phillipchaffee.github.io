@@ -14,6 +14,7 @@ layout: default
             <div class="column is-12-mobile is-10-tablet is-8-desktop">
                 <section class="content">
                     <h1 class="title">{{ page.title }}</h1>
+                    <p class="subtitle is-6">{{ page.date | date: '%F' }}</p>
                     <hr />
                     {{ content }}
                 </section>
