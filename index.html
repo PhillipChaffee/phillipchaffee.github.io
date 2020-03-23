@@ -1,19 +1,28 @@
 ---
-layout: home
-intro: Hi! My name is Phillip.
-tagline: I am a husband, self-taught software developer, and free thinker.
+layout: page
+title: Home
 ---
+<section class="c-archives">
+{% for post in site.posts  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
-<p>{{ page.tagline }}</p>
-
-<p>I rock climb, play table tennis, read, and write.</p>
-
-<p>I am interested in metaphysics, psychology, technology, self-improvement, and human experience/society.</p>
-
-<p>If you want to know what I am thinking about, check out my <a href="/blog">blog</a>.</p>
-
-<p class="title is-3">Current Goal</p>
-<p class="subtitle is-5">Get Open Life to alpha.</p>
-<p class="subtitle is-6">Open Life is a place to track your goals openly on the internet.<br />
-        Follow along on <a href="https://getmakerlog.com/products/open-life" rel="noopener noreferrer"
-                target="_blank">Makerlog</a>.</p>
+    {% if forloop.first %}
+        <h2 class="c-archives__year" id="{{ this_year }}-ref">{{this_year}}</h2>
+        <ul class="c-archives__list">
+    {% endif %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+            <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% if forloop.last %}
+        </ul>
+    {% else %}
+        {% if this_year != next_year %}
+        </ul>
+        <h2 class="c-archives__year" id="{{ next_year }}-ref">{{next_year}}</h2>
+        <ul class="c-archives__list">
+        {% endif %}
+    {% endif %}
+{% endfor %}
+</section>
