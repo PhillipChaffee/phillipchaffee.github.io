@@ -5,7 +5,7 @@ date: 2020-04-27 08:30:00 -0700
 categories: personal
 ---
 
-#2019
+# 2019
 2019 was one of the best years of my life.
 
 I am hesitant to say the best, because I don't remember my childhood years that well, but it could have been the best.
@@ -28,7 +28,7 @@ I decided I wanted to change jobs around December, and started looking. I got ac
 
 That was about it for 2019.
 
-#2020
+# 2020
 
 2020 started with job interviews in San Francisco.
 
