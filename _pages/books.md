@@ -5,8 +5,7 @@ permalink: /books/
 ---
 
 **Current Book/s**
-- Rationality: From AI to Zombies (Yudkowsky 2015)
-- Extreme Ownership: How U.S. Navy SEALs Lead and Win (Willink & Babin 2017)
+- Atomic Habits (Clear 2018)
 
 ---
 **Read**
@@ -16,3 +15,4 @@ In the future I will add a top 10 list.
 
 - Permanent Record (Snowden 2019)
 - Free Will (Harris 2020)
+- Extreme Ownership: How U.S. Navy SEALs Lead and Win (Willink & Babin 2017)
