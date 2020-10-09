@@ -3,8 +3,14 @@ layout: page
 title: About
 permalink: /about/
 ---
-Software Engineer.
 
-I am currently working at a startup called VoiceOps in SF.
+Self-taught software engineer.
 
-I like to ask questions. My favorite question is, why?
+Cheese pizza, sashimi, and ramen lover.
+
+Interested in
+- Self-improvement
+- Entrepreneurship/Startups
+- Learning outside traditional institutions
+
+If you want to chat you can schedule some time with me [here](https://calendly.com/phillip-voiceops/30min)! I would love to meet you.
