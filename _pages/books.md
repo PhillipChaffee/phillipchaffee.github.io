@@ -6,6 +6,7 @@ permalink: /books/
 
 **Current Book/s**
 - Beyond Good And Evil (Nietzsche 1886)
+- The Algorithm Design Manual (Skiena 2008)
 
 ---
 **Read**

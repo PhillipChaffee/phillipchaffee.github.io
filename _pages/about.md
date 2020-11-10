@@ -8,6 +8,8 @@ Self-taught software engineer.
 
 Cheese pizza, sashimi, and ramen lover.
 
+Working on starting a venture backed startup in 2021.
+
 Interested in
 - Self-improvement
 - Entrepreneurship/Startups

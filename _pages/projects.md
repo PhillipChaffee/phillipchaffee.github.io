@@ -5,7 +5,7 @@ permalink: /projects/
 ---
 
 **Main Project**
-- [Open Life](https://myopen.life) - social profile to display and track your goals openly on the internet - C# + .NETCore + Entity Framework, React
+- [Start a venture backed startup in 2021.](https://docs.google.com/document/d/1Q9Gc1tRD-UkObzmgPby6GLbSkokYjq3XBWeRMR3ARb4/edit?usp=sharing)
 
 **Active** (I work on these occasionally)
 - [Learn Anything Cafe](https://learnanything.cafe/) - crowd sourced learning resources - Node.js + TypeORM, React
