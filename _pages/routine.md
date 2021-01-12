@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Habits
+title: Routine
 permalink: /routine/
 ---
 
