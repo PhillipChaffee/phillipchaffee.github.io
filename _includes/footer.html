@@ -1,8 +1,12 @@
 <footer class="c-page__footer">
 	<hr />
-	<p>&copy; {{ site.author }} {{ 'now' | date: '%Y' }} | Powered by Jekyll | Using theme:Biu </p>
+	<p>&copy; {{ site.author }} {{ 'now' | date: '%Y' }} | Powered by Jekyll | Using theme: Biu </p>
 	{% if page.layout != 'amp' %}
     <br />
 	{% endif %}
-	<p>Find me on: {% if site.twitter_username %}<a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>{% endif %}{% if site.twitter_username %}{% if site.github_username %} & {% endif %}{% endif %}{% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">Github</a>{% endif %}<span class="u-separate"></span> Subscribe: <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a></p>
+	<p>
+		{% if site.leetcode_username %}<a href="https://leetcode.com/{{ site.leetcode_username }}">Leetcode</a>{% endif %}{% if site.leetcode_username %} & {% endif %}
+		{% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">Github</a>{% endif %} /
+		Subscribe: <a href="{{ '/feed.xml' | prepend: site.baseurl }}">RSS</a>
+	</p>
 </footer>

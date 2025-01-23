@@ -5,7 +5,7 @@ author: Phillip Chaffee
 email: phillipdensmorechaffee@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://phillipchaffee.io" # the base hostname & protocol for your site
-twitter_username: phillipchaffee
+leetcode_username: phillipchaffee
 github_username:  phillipchaffee
 
 # Build settings
