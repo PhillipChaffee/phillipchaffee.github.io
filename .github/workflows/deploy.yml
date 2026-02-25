@@ -28,6 +28,7 @@ jobs:
         with:
           repository: PhillipChaffee/resume
           path: tmp/resume
+          fetch-depth: 0
 
       - name: Checkout theme
         uses: actions/checkout@v4
@@ -46,14 +47,22 @@ jobs:
       - name: Install puppeteer
         run: npm install puppeteer
 
-      - name: Render resume HTML
-        run: node scripts/render-resume.js tmp/resume/resume.json tmp/jsonresume-theme-one resume
-
-      - name: Generate resume PDF
-        run: node scripts/generate-pdf.js resume/resume-raw.html resume/phillip-chaffee-resume.pdf
-
-      - name: Remove raw HTML
-        run: rm resume/resume-raw.html
+      - name: Render all resume branches
+        run: |
+          cd tmp/resume
+          for branch in $(git branch -r | grep -v HEAD | sed 's|.*origin/||'); do
+            git checkout "$branch"
+            if [ "$branch" = "master" ]; then
+              node ../../scripts/render-resume.js resume.json ../jsonresume-theme-one ../../resume
+              node ../../scripts/generate-pdf.js ../../resume/resume-raw.html ../../resume/phillip-chaffee-resume.pdf
+              rm ../../resume/resume-raw.html
+            else
+              node ../../scripts/render-resume.js resume.json ../jsonresume-theme-one "../../resume/$branch" "$branch"
+              node ../../scripts/generate-pdf.js "../../resume/$branch/resume-raw.html" "../../resume/$branch/phillip-chaffee-resume.pdf"
+              rm "../../resume/$branch/resume-raw.html"
+            fi
+          done
+          cd ../..
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
