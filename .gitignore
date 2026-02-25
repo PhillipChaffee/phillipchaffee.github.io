@@ -4,3 +4,6 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 .idea
+node_modules/
+tmp/
+resume/

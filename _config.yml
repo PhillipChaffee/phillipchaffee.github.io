@@ -10,6 +10,12 @@ github_username:  phillipchaffee
 
 # Build settings
 include: [_pages]
+exclude:
+  - scripts
+  - tmp
+  - node_modules
+  - package.json
+  - package-lock.json
 markdown: kramdown
 permalink: /:year/:month/:title
 sass:

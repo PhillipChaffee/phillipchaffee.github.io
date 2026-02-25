@@ -1,0 +1,76 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [master]
+  repository_dispatch:
+    types: [resume-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website
+        uses: actions/checkout@v4
+
+      - name: Checkout resume
+        uses: actions/checkout@v4
+        with:
+          repository: PhillipChaffee/resume
+          path: tmp/resume
+
+      - name: Checkout theme
+        uses: actions/checkout@v4
+        with:
+          repository: PhillipChaffee/jsonresume-theme-one
+          path: tmp/jsonresume-theme-one
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install theme dependencies
+        run: cd tmp/jsonresume-theme-one && npm ci
+
+      - name: Install puppeteer
+        run: npm install puppeteer
+
+      - name: Render resume HTML
+        run: node scripts/render-resume.js tmp/resume/resume.json tmp/jsonresume-theme-one resume
+
+      - name: Generate resume PDF
+        run: node scripts/generate-pdf.js resume/resume-raw.html resume/phillip-chaffee-resume.pdf
+
+      - name: Remove raw HTML
+        run: rm resume/resume-raw.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Build Jekyll
+        uses: actions/jekyll-build-pages@v1
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
