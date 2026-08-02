@@ -7,3 +7,4 @@ Gemfile.lock
 node_modules/
 tmp/
 resume/
+.cursor/
