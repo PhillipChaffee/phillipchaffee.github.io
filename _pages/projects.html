@@ -1,0 +1,20 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+{% assign projects = site.data.projects | sort: "first_commit" | reverse %}
+<section class="c-projects">
+    <ul class="c-projects__list">
+    {% for project in projects %}
+        <li class="c-projects__item">
+            <header class="c-projects__header">
+                <h3>{% if project.url != "" %}<a href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}</h3>
+                <p class="c-projects__date"><time datetime="{{ project.first_commit }}">{{ project.first_commit | date: "%b %Y" }}</time></p>
+            </header>
+            <p>{{ project.summary }}</p>
+            <p><strong>Why:</strong> {{ project.why }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+</section>

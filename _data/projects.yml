@@ -1,0 +1,76 @@
+# Projects shown on /projects/. The page sorts by first_commit (newest first),
+# so new entries can go anywhere in this file.
+# first_commit: date of the repository's first commit (YYYY-MM-DD).
+# url: leave empty for private repositories.
+
+- name: gmail-unsubscribe
+  url: https://github.com/PhillipChaffee/gmail-unsubsribe
+  first_commit: "2026-11-03"
+  summary: >-
+    A localhost web app that scans the last 30 days of Gmail, groups newsletters and marketing
+    mail by sender, and unsubscribes from the ones you pick in bulk, using one-click, mailto, or
+    manual links read from each message's List-Unsubscribe header.
+  why: >-
+    Unsubscribing one email at a time is tedious, and the hosted tools that do it in bulk want
+    access to your whole inbox. This one runs only on my machine, with my own OAuth client, and
+    talks to no one but Google and the unsubscribe endpoints.
+
+- name: glm-5.3-flash-drafter
+  url: ""
+  first_commit: "2026-10-23"
+  summary: >-
+    A research workspace for building and training my own speculative-decoding drafter for
+    GLM-5.3-Flash, with reproducible experiments and hand-written lessons on the model's
+    internals.
+  why: >-
+    For learning and for fun. I wanted to understand how a drafter and its target model
+    actually work, down to following one token through the architecture, and training one
+    myself is the best way to get there. Negative results count as findings too.
+
+- name: pi-rust
+  url: https://github.com/PhillipChaffee/pi-rust
+  first_commit: "2026-09-18"
+  summary: >-
+    A full-parity Rust port of pi, a minimal terminal coding agent: every upstream package as a
+    crate, every upstream test ported as the acceptance gate, a Rust-native extension system,
+    and an import tool so a Rust pi can replace a TypeScript one.
+  why: >-
+    pi is one of the coding agents I run every day, and I wanted it as a single native binary.
+    Porting a real codebase test-for-test is also a hard, honest benchmark for doing large
+    projects with coding agents.
+
+- name: full-lint
+  url: https://github.com/PhillipChaffee/full-lint
+  first_commit: "2026-09-10"
+  summary: >-
+    The strictest lint, type-check, and test setup that stays usable, one folder per language
+    (Rust, Python, TypeScript, Go, shell): a 95% coverage gate, cognitive-complexity and
+    file-length limits, and shared hygiene checks, each proven to fail on demand.
+  why: >-
+    With agents writing most of my code, strict automated gates are what keep the quality up.
+    I wanted to set them up once and start every new project from the same baseline; pi-rust
+    and the GLM drafter both started from it.
+
+- name: ultraopen
+  url: https://github.com/PhillipChaffee/ultraopen
+  first_commit: "2026-08-29"
+  summary: >-
+    A plugin for the opencode coding agent that runs deterministic multi-agent workflows:
+    plain JavaScript scripts in which agent() is the only nondeterministic call, so runs are
+    reproducible and a failed run resumes without re-running agents that already finished.
+  why: >-
+    Asking one model to fan out work to subagents gives a different, fragile result every time.
+    I wanted the orchestration to be real code that I can read, review, and resume, inside the
+    agent I already use instead of a separate framework.
+
+- name: personal-ai-setup
+  url: https://github.com/PhillipChaffee/personal-ai-setup
+  first_commit: "2026-08-20"
+  summary: >-
+    A reproducible blueprint for a self-owned personal AI: a Goose hub and coding agents running
+    24/7 on a small server, reached over Tailscale, set up by a wizard, and running on open
+    models for about $50 to $75 a month.
+  why: >-
+    I wanted one assistant with one shared history across my devices, safe enough to trust
+    with my email, calendar, health, and finances. That meant open models on providers with
+    zero data retention, so my private data never reaches big tech.
