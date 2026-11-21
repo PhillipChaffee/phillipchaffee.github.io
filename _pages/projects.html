@@ -1,0 +1,26 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+<section class="c-projects">
+{% assign repos = site.data.pinned_repos %}
+{% assign site_owner = site.github_username | downcase %}
+{% if repos and repos.size > 0 %}
+    <ul class="c-projects__list">
+    {% for repo in repos %}
+        <li class="c-projects__item">
+            <h3><a href="{{ repo.url }}">{% assign repo_owner = repo.owner | downcase %}{% if repo_owner != site_owner %}{{ repo.owner }}/{% endif %}{{ repo.name }}</a></h3>
+            {% if repo.description %}<p>{{ repo.description | escape }}</p>{% endif %}
+            <p class="c-projects__meta">
+                {% if repo.language %}<span>{{ repo.language }}</span>{% endif %}
+                {% if repo.stars > 0 %}<span>&#9733; {{ repo.stars }}</span>{% endif %}
+                {% if repo.homepage %}<span><a href="{{ repo.homepage }}">Website</a></span>{% endif %}
+            </p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>See my projects on <a href="https://github.com/{{ site.github_username }}">GitHub</a>.</p>
+{% endif %}
+</section>

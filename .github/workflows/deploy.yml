@@ -3,6 +3,8 @@ name: Build and Deploy
 on:
   push:
     branches: [master]
+  schedule:
+    - cron: "17 9 * * *"
   repository_dispatch:
     types: [resume-updated]
   workflow_dispatch:
@@ -63,6 +65,11 @@ jobs:
             fi
           done
           cd ../..
+
+      - name: Fetch pinned repositories
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/fetch-pinned-repos.js "${{ github.repository_owner }}" _data/pinned_repos.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
