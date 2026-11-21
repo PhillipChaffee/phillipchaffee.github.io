@@ -10,7 +10,8 @@ github_username:  phillipchaffee
 
 # Repositories listed on /projects/ below the ones pinned on the GitHub
 # profile, in this order. Each entry is owner/name and must be public.
-extra_projects: []
+extra_projects:
+  - PhillipChaffee/glm-5.3-flash-drafter
 
 # Build settings
 include: [_pages]
