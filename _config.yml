@@ -17,7 +17,6 @@ extra_projects:
 include: [_pages]
 exclude:
   - scripts
-  - resume-theme
   - tmp
   - node_modules
   - package.json

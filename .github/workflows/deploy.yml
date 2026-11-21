@@ -33,13 +33,16 @@ jobs:
           path: tmp/resume
           fetch-depth: 0
 
+      - name: Checkout theme
+        uses: actions/checkout@v7
+        with:
+          repository: PhillipChaffee/jsonresume-theme-editorial
+          path: tmp/jsonresume-theme-editorial
+
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
           node-version: "24"
-
-      - name: Test resume theme
-        run: node --test resume-theme/test.js
 
       - name: Install script dependencies
         run: npm install puppeteer js-yaml
@@ -50,10 +53,10 @@ jobs:
           for branch in $(git branch -r | grep -v HEAD | sed 's|.*origin/||'); do
             git checkout "$branch"
             if [ "$branch" = "master" ]; then
-              node ../../scripts/render-resume.js resume.json ../../resume-theme ../../resume
+              node ../../scripts/render-resume.js resume.json ../jsonresume-theme-editorial ../../resume
               node ../../scripts/generate-pdf.js ../../resume/index.html ../../resume/phillip-chaffee-resume.pdf
             else
-              node ../../scripts/render-resume.js resume.json ../../resume-theme "../../resume/$branch" "$branch"
+              node ../../scripts/render-resume.js resume.json ../jsonresume-theme-editorial "../../resume/$branch" "$branch"
               node ../../scripts/generate-pdf.js "../../resume/$branch/index.html" "../../resume/$branch/phillip-chaffee-resume.pdf"
             fi
           done

@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const resumePath = process.argv[2] || "tmp/resume/resume.json";
-const themePath = process.argv[3] || "resume-theme";
+const themePath = process.argv[3] || "tmp/jsonresume-theme-editorial";
 const outputDir = process.argv[4] || "resume";
 const label = process.argv[5] || "";
 
@@ -20,11 +20,26 @@ const pdf = label
   ? `/resume/${label}/phillip-chaffee-resume.pdf`
   : "/resume/phillip-chaffee-resume.pdf";
 
+// Sets the theme's nav and column to match the site's own header and
+// container, so moving between pages keeps the links in the same place.
+const head = `<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap">
+<style>
+  @media screen {
+    :root { --column: 600px; --site-link: #0067FB; }
+    .page { padding-top: 100px; }
+    .nav { font: 400 18px/1.4 Inconsolata, ui-monospace, monospace; gap: 4px 18px; margin-bottom: 72px; }
+    .nav a, .nav a[aria-current], .nav .pdf { color: var(--site-link); }
+    .nav .sep { color: var(--muted); }
+  }
+  @media screen and (prefers-color-scheme: dark) { :root { --site-link: #8AB4FF; } }
+  @media screen and (max-width: 600px) { .page { padding-top: 40px; } .nav { font-size: 16px; margin-bottom: 44px; } }
+</style>`;
+
 // The navigation is hidden in print, so the PDF is printed from this same file.
 fs.mkdirSync(outputDir, { recursive: true });
 fs.writeFileSync(
   path.join(outputDir, "index.html"),
-  theme.render(resume, { nav, pdf, note: label }),
+  theme.render(resume, { nav, pdf, note: label, head }),
 );
 
 console.log("Resume HTML written to " + outputDir);
