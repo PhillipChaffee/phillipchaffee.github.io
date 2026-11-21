@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Projects
+   ========================================================================== */
+
+.c-projects {
+    margin-bottom: 10rem;
+}
+
+.c-projects__list {
+    list-style: none;
+}
+
+.c-projects__item {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-top: 1px solid #EFF1F3;
+
+    h3 {
+        @include fs--body;
+    }
+
+    p {
+        @include fs--body;
+        color: #515862;
+    }
+}
+
+.c-projects__meta {
+    span + span {
+        margin-left: 1.8rem;
+    }
+}

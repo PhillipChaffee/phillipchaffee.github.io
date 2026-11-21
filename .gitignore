@@ -7,4 +7,5 @@ Gemfile.lock
 node_modules/
 tmp/
 resume/
+_data/projects.json
 .cursor/
