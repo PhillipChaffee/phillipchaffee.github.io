@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron: "17 9 * * *"
+    - cron: "17 * * * *"
   repository_dispatch:
     types: [resume-updated]
   workflow_dispatch:
@@ -46,8 +46,8 @@ jobs:
       - name: Install theme dependencies
         run: cd tmp/jsonresume-theme-one && npm ci
 
-      - name: Install puppeteer
-        run: npm install puppeteer
+      - name: Install script dependencies
+        run: npm install puppeteer js-yaml
 
       - name: Render all resume branches
         run: |
@@ -66,10 +66,10 @@ jobs:
           done
           cd ../..
 
-      - name: Fetch pinned repositories
+      - name: Fetch projects
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: node scripts/fetch-pinned-repos.js "${{ github.repository_owner }}" _data/pinned_repos.json
+        run: node scripts/fetch-projects.js "${{ github.repository_owner }}" _config.yml _data/projects.json
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
