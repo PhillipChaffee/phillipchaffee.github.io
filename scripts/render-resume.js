@@ -2,41 +2,43 @@ const fs = require("fs");
 const path = require("path");
 
 const resumePath = process.argv[2] || "tmp/resume/resume.json";
-const themePath = process.argv[3] || "tmp/jsonresume-theme-one";
+const themePath = process.argv[3] || "tmp/jsonresume-theme-editorial";
 const outputDir = process.argv[4] || "resume";
 const label = process.argv[5] || "";
 
 const resume = JSON.parse(fs.readFileSync(resumePath, "utf-8"));
 const theme = require(path.resolve(themePath));
 
-const html = theme.render(resume);
-
-fs.mkdirSync(outputDir, { recursive: true });
-
-// Raw HTML for PDF (no nav bar)
-fs.writeFileSync(path.join(outputDir, "resume-raw.html"), html);
-
-// Inject nav bar for web version
-const resumeLabel = label ? `Resume (${label})` : "Resume";
-const pdfHref = label
+const nav = [
+  { label: "Home", href: "/" },
+  { label: "Writing", href: "/writing/" },
+  { label: "Projects", href: "/projects/" },
+  { label: "Books", href: "/books/" },
+  { label: "Resume", href: "/resume/", current: !label },
+];
+const pdf = label
   ? `/resume/${label}/phillip-chaffee-resume.pdf`
   : "/resume/phillip-chaffee-resume.pdf";
 
-const navBar = `
-<div style="background:#0D2B35;padding:10px 20px;font-family:Helvetica,sans-serif;font-size:14px;display:flex;align-items:center;gap:15px;">
-  <a href="/" style="color:#fff;text-decoration:none;">Home</a>
-  <span style="color:#5C6E74;">/</span>
-  <a href="/writing/" style="color:#fff;text-decoration:none;">Writing</a>
-  <span style="color:#5C6E74;">/</span>
-  <a href="/books/" style="color:#fff;text-decoration:none;">Books</a>
-  <span style="color:#5C6E74;">/</span>
-  <a href="/resume/" style="color:#fff;text-decoration:none;">Resume</a>${label ? `
-  <span style="color:#5C6E74;">/</span>
-  <span style="color:#96A0A0;">${label}</span>` : ""}
-  <a href="${pdfHref}" style="color:#8BE367;text-decoration:none;margin-left:auto;">Download PDF</a>
-</div>`;
+// Sets the theme's nav in the site header's font, size, colour and height,
+// so the links look the same on the resume as on the other pages.
+const head = `<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap">
+<style>
+  @media screen {
+    :root { --site-link: #0067FB; }
+    .page { padding-top: 100px; }
+    .nav { font: 400 18px/1.4 Inconsolata, ui-monospace, monospace; gap: 4px 18px; margin-bottom: 72px; }
+    .nav a, .nav a[aria-current], .nav .pdf { color: var(--site-link); }
+    .nav .sep { color: var(--muted); }
+  }
+  @media screen and (max-width: 600px) { .page { padding-top: 40px; } .nav { font-size: 16px; margin-bottom: 44px; } }
+</style>`;
 
-const webHtml = html.replace("<body>", "<body>" + navBar);
-fs.writeFileSync(path.join(outputDir, "index.html"), webHtml);
+// The navigation is hidden in print, so the PDF is printed from this same file.
+fs.mkdirSync(outputDir, { recursive: true });
+fs.writeFileSync(
+  path.join(outputDir, "index.html"),
+  theme.render(resume, { palette: "white", dark: false, nav, pdf, note: label, head }),
+);
 
 console.log("Resume HTML written to " + outputDir);

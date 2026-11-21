@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 
-const htmlPath = process.argv[2] || "resume/resume-raw.html";
+const htmlPath = process.argv[2] || "resume/index.html";
 const outputPath = process.argv[3] || "resume/phillip-chaffee-resume.pdf";
 
 (async () => {
@@ -18,9 +18,8 @@ const outputPath = process.argv[3] || "resume/phillip-chaffee-resume.pdf";
 
   await page.pdf({
     path: outputPath,
-    format: "Letter",
+    preferCSSPageSize: true,
     printBackground: true,
-    margin: { top: "20px", right: "20px", bottom: "20px", left: "20px" },
   });
 
   await browser.close();
