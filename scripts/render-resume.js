@@ -31,7 +31,6 @@ const head = `<link rel="stylesheet" href="https://fonts.googleapis.com/css?fami
     .nav a, .nav a[aria-current], .nav .pdf { color: var(--site-link); }
     .nav .sep { color: var(--muted); }
   }
-  @media screen and (prefers-color-scheme: dark) { :root { --site-link: #8AB4FF; } }
   @media screen and (max-width: 600px) { .page { padding-top: 40px; } .nav { font-size: 16px; margin-bottom: 44px; } }
 </style>`;
 
@@ -39,7 +38,7 @@ const head = `<link rel="stylesheet" href="https://fonts.googleapis.com/css?fami
 fs.mkdirSync(outputDir, { recursive: true });
 fs.writeFileSync(
   path.join(outputDir, "index.html"),
-  theme.render(resume, { nav, pdf, note: label, head }),
+  theme.render(resume, { palette: "white", dark: false, nav, pdf, note: label, head }),
 );
 
 console.log("Resume HTML written to " + outputDir);
