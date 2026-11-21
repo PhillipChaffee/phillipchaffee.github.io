@@ -8,14 +8,14 @@ test("a job shows its title, employer, dates and technologies", () => {
   const html = body({
     work: [{ position: "Engineer", name: "Acme", startDate: "2025-02", tech: ["Rust", "egui"] }],
   });
-  assert.match(html, /<h3>Engineer<span class="org">Acme<\/span><\/h3>/);
-  assert.match(html, /Feb 2025 – Present/);
+  assert.match(html, /<h3>Engineer<\/h3>/);
+  assert.match(html, /<b>Acme<\/b> · Feb 2025 – Present/);
   assert.match(html, /Rust · egui/);
 });
 
 test("a project that only names its start year is not marked as ongoing", () => {
   const html = body({ projects: [{ name: "n2t", startDate: "2015" }] });
-  assert.match(html, /<span>2015<\/span>/);
+  assert.match(html, /<p class="meta">2015<\/p>/);
   assert.doesNotMatch(html, /Present/);
 });
 
@@ -41,7 +41,7 @@ test("prose keeps links to the web and shows every other tag as text", () => {
   assert.doesNotMatch(html, /<script|href="javascript/);
 });
 
-test("contact rows show web addresses without their scheme", () => {
+test("contact links show web addresses without their scheme", () => {
   const html = body({
     basics: {
       name: "Ada Lovelace",
@@ -49,7 +49,7 @@ test("contact rows show web addresses without their scheme", () => {
       profiles: [{ network: "GitHub", url: "https://www.github.com/ada/" }],
     },
   });
-  assert.match(html, /Ada <em>Lovelace<\/em>/);
+  assert.match(html, /<h1>Ada Lovelace<\/h1>/);
   assert.match(html, /<a href="mailto:ada@example.com">ada@example.com<\/a>/);
   assert.match(html, /<a href="https:\/\/www.github.com\/ada\/">github.com\/ada<\/a>/);
 });
@@ -58,6 +58,6 @@ test("the site navigation and PDF link appear only when asked for", () => {
   assert.doesNotMatch(body({}), /<nav/);
   const html = body({}, { nav: [{ label: "Home", href: "/" }], pdf: "/resume/r.pdf", note: "draft" });
   assert.match(html, /<a href="\/">Home<\/a>/);
-  assert.match(html, /<a class="pdf" href="\/resume\/r.pdf">Download PDF<\/a>/);
+  assert.match(html, /<a class="pdf" href="\/resume\/r.pdf"><span>Download <\/span>PDF<\/a>/);
   assert.match(html, /draft/);
 });
