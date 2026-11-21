@@ -20,12 +20,12 @@ const pdf = label
   ? `/resume/${label}/phillip-chaffee-resume.pdf`
   : "/resume/phillip-chaffee-resume.pdf";
 
-// Sets the theme's nav and column to match the site's own header and
-// container, so moving between pages keeps the links in the same place.
+// Sets the theme's nav in the site header's font, size, colour and height,
+// so the links look the same on the resume as on the other pages.
 const head = `<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap">
 <style>
   @media screen {
-    :root { --column: 600px; --site-link: #0067FB; }
+    :root { --site-link: #0067FB; }
     .page { padding-top: 100px; }
     .nav { font: 400 18px/1.4 Inconsolata, ui-monospace, monospace; gap: 4px 18px; margin-bottom: 72px; }
     .nav a, .nav a[aria-current], .nav .pdf { color: var(--site-link); }
