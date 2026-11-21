@@ -33,19 +33,13 @@ jobs:
           path: tmp/resume
           fetch-depth: 0
 
-      - name: Checkout theme
-        uses: actions/checkout@v7
-        with:
-          repository: PhillipChaffee/jsonresume-theme-one
-          path: tmp/jsonresume-theme-one
-
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
           node-version: "24"
 
-      - name: Install theme dependencies
-        run: cd tmp/jsonresume-theme-one && npm ci
+      - name: Test resume theme
+        run: node --test resume-theme/test.js
 
       - name: Install script dependencies
         run: npm install puppeteer js-yaml
@@ -56,13 +50,11 @@ jobs:
           for branch in $(git branch -r | grep -v HEAD | sed 's|.*origin/||'); do
             git checkout "$branch"
             if [ "$branch" = "master" ]; then
-              node ../../scripts/render-resume.js resume.json ../jsonresume-theme-one ../../resume
-              node ../../scripts/generate-pdf.js ../../resume/resume-raw.html ../../resume/phillip-chaffee-resume.pdf
-              rm ../../resume/resume-raw.html
+              node ../../scripts/render-resume.js resume.json ../../resume-theme ../../resume
+              node ../../scripts/generate-pdf.js ../../resume/index.html ../../resume/phillip-chaffee-resume.pdf
             else
-              node ../../scripts/render-resume.js resume.json ../jsonresume-theme-one "../../resume/$branch" "$branch"
-              node ../../scripts/generate-pdf.js "../../resume/$branch/resume-raw.html" "../../resume/$branch/phillip-chaffee-resume.pdf"
-              rm "../../resume/$branch/resume-raw.html"
+              node ../../scripts/render-resume.js resume.json ../../resume-theme "../../resume/$branch" "$branch"
+              node ../../scripts/generate-pdf.js "../../resume/$branch/index.html" "../../resume/$branch/phillip-chaffee-resume.pdf"
             fi
           done
           cd ../..
